@@ -28,16 +28,19 @@
       <button v-on:click="subtract(i)">
         Minus <input type="text" v-on:input="handleI" />
       </button>
+      <p v-once>Starting: {{ counter }}</p>
       <p>Result: {{ counter }}</p>
       <input
         type="text"
         placeholder="Type your name"
-        v-bind:value="name"
         v-on:input="setName($event, 'Saxena')"
+        v-on:keyup.enter="setConfirmedName"
       />
-      <p>Your Name: {{ name }}</p>
+      <!-- UP: enter keyboard event modifier -->
+      <!-- <button v-on:click="setConfirmedName">Enter</button> -->
+      <p>Your Name: {{ confirmedName }}</p>
 
-      <form v-on:submit="submitForm">
+      <form v-on:submit.prevent="submitForm">
         <input type="text" />
         <button>Sign Up</button>
       </form>
