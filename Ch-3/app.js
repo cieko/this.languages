@@ -23,11 +23,15 @@ const app = Vue.createApp({
           ? this.counter
           : this.counter - this.i;
     },
-    setName(e) {
-      this.name = e.target.value;
+    setName(e, surname) {
+      this.name = e.target.value + ` ` + surname;
     },
     handleI(e) {
       this.i = Number(e.target.value) ? Number(e.target.value) : 1;
+    },
+    submitForm(e) {
+      e.preventDefault();
+      alert("WHy?");
     },
   },
 });

@@ -33,9 +33,14 @@
         type="text"
         placeholder="Type your name"
         v-bind:value="name"
-        v-on:input="setName"
+        v-on:input="setName($event, 'Saxena')"
       />
       <p>Your Name: {{ name }}</p>
+
+      <form v-on:submit="submitForm">
+        <input type="text" />
+        <button>Sign Up</button>
+      </form>
     </section>
   </body>
 </html>
