@@ -5,15 +5,25 @@ const app = Vue.createApp({
       counter: 0,
       name: "",
       confirmedName: "",
+      fullname: "",
     };
   },
-  computed: {
-    fullname() {
-      if (this.name === "") {
-        return;
+  watch: {
+    name(value) {
+      if (value === "") {
+        this.fullname = "";
+      } else {
+        this.fullname = value + " " + "Saxena";
       }
-      return this.name + " " + "Saxena";
     },
+  },
+  computed: {
+    // fullname() {
+    //   if (this.name === "") {
+    //     return;
+    //   }
+    //   return this.name + " " + "Saxena";
+    // },
   },
   methods: {
     add() {
