@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vue Basics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/vue@next" defer></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Vue Events</h1>
+  </header>
+  <section id="events">
+    <h2>Events in Action</h2>
+    <!-- Why avoid increment ("++") and decrement ("--") operators in JavaScript? 
+        The ++ (increment) and -- (decrement) operators have been known to contribute to bad code by encouraging excessive trickiness.
+        They are second only to faulty architecture in enabling to viruses and other security menaces. -->
+    <button v-on:click="counter == 100 ? counter : counter + 1">Plus</button>
+    <button v-on:click="counter == 0 ? counter : counter - 1">Minus</button>
+    <p>Result: {{ counter }}</p>
+  </section>
+</body>
+
+</html>
