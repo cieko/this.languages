@@ -22,8 +22,8 @@
       <!-- Why avoid increment ("++") and decrement ("--") operators in JavaScript? 
         The ++ (increment) and -- (decrement) operators have been known to contribute to bad code by encouraging excessive trickiness.
         They are second only to faulty architecture in enabling to viruses and other security menaces. -->
-      <button v-on:click="add">Plus</button>
-      <button v-on:click="subtract">Minus</button>
+      <button v-on:click="add(5)">Plus</button>
+      <button v-on:click="subtract(10)">Minus</button>
       <p>Result: {{ counter }}</p>
     </section>
   </body>
