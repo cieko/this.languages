@@ -7,9 +7,16 @@ const app = Vue.createApp({
     };
   },
   methods: {
+    reset() {
+      this.boxASelected = false;
+      this.boxBSelected = false;
+      this.boxCSelected = false;
+    },
     boxSelected(box) {
+      // this.reset();
       const temp = ["boxASelected", "boxBSelected", "boxCSelected"];
-      this[temp.find((item) => item[3] === box)] = true;
+      this[temp.find((item) => item[3] === box)] =
+        !this[temp.find((item) => item[3] === box)];
     },
   },
 });
