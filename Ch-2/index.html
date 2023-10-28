@@ -19,7 +19,7 @@
     <section id="user-goal">
       <h2>My Course Goal</h2>
       <p v-for="goal in courseGoal">{{ goal }}</p>
-      <p>{{ outputGoal() }}</p>
+      <p v-for="item in outputGoal()">{{ item }}</p>
       <!-- MUST AVOID MOST OF THE TIME (V-HTML) -->
       <p
         v-html="text"
