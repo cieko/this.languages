@@ -4,8 +4,16 @@ const app = Vue.createApp({
       i: 0,
       counter: 0,
       name: "",
-      confirmedName: ""
+      confirmedName: "",
     };
+  },
+  computed: {
+    fullname() {
+      if (this.name === "") {
+        return;
+      }
+      return this.name + " " + "Saxena";
+    },
   },
   methods: {
     add() {
@@ -25,10 +33,19 @@ const app = Vue.createApp({
           : this.counter - this.i;
     },
     setName(e, surname) {
-      this.name = e.target.value + ` ` + surname;
+      this.name = e.target.value;
+    },
+    resetName() {
+      this.name = "";
     },
     setConfirmedName() {
-      this.confirmedName = this.name
+      this.confirmedName = this.name;
+    },
+    outputFullname() {
+      if (this.name === "") {
+        return;
+      }
+      return this.name + " " + "Saxena";
     },
     handleI(e) {
       this.i = Number(e.target.value) ? Number(e.target.value) : 1;

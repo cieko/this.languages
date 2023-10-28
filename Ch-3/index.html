@@ -33,12 +33,14 @@
       <input
         type="text"
         placeholder="Type your name"
-        v-on:input="setName($event, 'Saxena')"
+        v-model="name"
         v-on:keyup.enter="setConfirmedName"
       />
+      <!-- V-MODEL makes it easy and with less codes -->
+      <button v-on:click="resetName">Reset Input</button>
       <!-- UP: enter keyboard event modifier -->
       <!-- <button v-on:click="setConfirmedName">Enter</button> -->
-      <p>Your Name: {{ confirmedName }}</p>
+      <p>Your Name: {{ fullname }}</p>
 
       <form v-on:submit.prevent="submitForm">
         <input type="text" />
